@@ -1,106 +1,70 @@
 <template>
-  <div class="full-screen-container">
-             <h2>Tom and Jerry lorem888</h2>
-  
-    <video
-      id="mainVideo"
-      controls
-      playsinline
-      loop
-      preload="metadata"
-      poster="/tom.webp"
-      class="video-player"
-    >
-      <source
-        src="/tomnjerry.mp4"
-        type="video/mp4"
-      >
+  <div class="flex min-h-screen items-center justify-center bg-linear-to-br from-zinc-950 via-black to-zinc-900 p-6">
+    <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-900 shadow-[0_25px_80px_rgba(0,0,0,.6)]">
 
-      <track
-        id="ruTrack"
-        src="/subtitles.ru.vtt"
-        kind="subtitles"
-        srclang="ru"
-        label="Русский"
-        default
+      <video
+        ref="videoRef"
+        class="max-h-[90vh] w-auto max-w-[95vw]"
+        controls
+        playsinline
+        loop
+        preload="metadata"
+        poster="/tom.webp"
       >
-    </video>
+        <source
+          src="/tomnjerry.mp4"
+          type="video/mp4"
+        >
 
-    <!-- Иконка субтитров -->
-    <button
-      class="subtitle-icon"
-      :class="{ active: subtitlesEnabled }"
-      title="Субтитры"
-      @click="toggleSubtitles"
-    >
-      💬
-    </button>
+        <track
+          src="/subtitles.ru.vtt"
+          kind="subtitles"
+          srclang="ru"
+          label="Русский"
+          default
+        >
+      </video>
+
+      <!-- затемнение снизу -->
+      <div
+        class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+      />
+
+      <!-- кнопка субтитров -->
+      <button
+        class="absolute right-5 bottom-20 flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 text-2xl text-white backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-white/20 active:scale-95"
+        :class="
+          subtitlesEnabled
+            ? 'ring-2 ring-sky-400 shadow-lg shadow-sky-500/40'
+            : 'opacity-70'
+        "
+        title="Субтитры"
+        @click="toggleSubtitles"
+      >
+        💬
+      </button>
+
+      <!-- статус -->
+      <div
+        class="absolute top-5 left-5 rounded-full bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur"
+      >
+        {{ subtitlesEnabled ? '🟢 Субтитры включены' : '⚪ Субтитры выключены' }}
+      </div>
+
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-
-
+<script setup lang="ts">
+const videoRef = ref<HTMLVideoElement | null>(null)
 
 const subtitlesEnabled = ref(true)
 
 const toggleSubtitles = () => {
-  const video = document.getElementById('mainVideo') as HTMLVideoElement
-  if (!video) return
+  const track = videoRef.value?.textTracks[0]
+  if (!track) return
 
-  const track = video.textTracks[0]
-  if (track) {
-    subtitlesEnabled.value = !subtitlesEnabled.value
-    track.mode = subtitlesEnabled.value ? 'showing' : 'disabled'
-  }
+  subtitlesEnabled.value = !subtitlesEnabled.value
+  track.mode = subtitlesEnabled.value ? 'showing' : 'disabled'
 }
 </script>
-
-<style scoped>
-.full-screen-container {
-  width: 100vw;           /* на всю ширину экрана */
-  height: 100vh;          /* на всю высоту экрана */
-  margin: 0;
-  padding: 0;
-  background: #000;
-  position: relative;
-  overflow: hidden;
-}
-
-.video-player {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;    /* contain — чтобы не обрезалось */
-  /* object-fit: cover; */ /* если хочешь чтобы полностью заполняло (может обрезать) */
-  background: #000;
-}
-
-/* Иконка субтитров */
-.subtitle-icon {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 56px;
-  height: 56px;
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s;
-  z-index: 20;
-}
-
-.subtitle-icon:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.1);
-}
-
-.subtitle-icon.active {
-  background: rgba(34, 197, 151, 0.9);
-}
-</style>
