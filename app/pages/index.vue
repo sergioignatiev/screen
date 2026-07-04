@@ -1,6 +1,6 @@
 <template>
   <div class="full-screen-container">
-    <h2>Tom and Jerry lorem888</h2>
+             <h2>Tom and Jerry lorem888</h2>
   
     <video
       id="mainVideo"
