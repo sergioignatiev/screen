@@ -51,14 +51,7 @@
 >
   Watch
 </UButton>
-<a
-  :href="movie.videoSrc"
-  download
-  class="inline-flex items-center justify-center gap-2 rounded-md bg-(--ui-bg-elevated) px-4 py-2 text-sm font-medium text-(--ui-text) ring ring-(--ui-border) hover:bg-(--ui-bg-accented) transition-colors"
->
-  <UIcon name="i-lucide-download" size="26" />
-  Download
-</a>
+
 
         </div>
 
