@@ -1,6 +1,14 @@
 <template>
 <div>
-<a class="js-subtitle-download" title="Download English subtitles" href="/en/shows/rick-and-morty/videos/84404/download_subtitle/en"><i class='flag en active-sub' />download</a>
+<iframe
+  src="https://player.cloudinary.com/embed/?cloud_name=slcihrr9&public_id=samples%2Felephants"
+  width="640"
+  height="360" 
+  style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
+  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+  allowfullscreen
+  frameborder="0"
+/>
 
 </div>
 
