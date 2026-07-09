@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex gap-4 bg-black text-white">
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/movies">Movies</NuxtLink>
   </div>

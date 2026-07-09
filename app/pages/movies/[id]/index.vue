@@ -25,4 +25,7 @@ if (!movie.value) {
   console.error(`Фильм с id "${movieId}" не найден`)
   // Например: await navigateTo('/')
 }
+useHead({
+title: movie.value ? movie.value.title : 'Фильм не найден',
+})
 </script>
