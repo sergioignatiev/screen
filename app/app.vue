@@ -12,6 +12,7 @@ useHead({
   title: 'TV Shows in french with subtitles',
   link: [
     {
+      key:'favicon',
       rel: 'icon',
       type: 'image/svg+xml',
       href: '/logo.jpg'
