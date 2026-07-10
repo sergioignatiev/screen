@@ -28,17 +28,11 @@ if (!movie.value) {
   console.error(`Фильм с id "${movieId}" не найден`)
   // Например: await navigateTo('/')
 }
-useHead({
-  title: movie.value ? movie.value.title : 'Фильм не найден',
-   link: [
-    {
-      key:'favicon',
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/250px-Flag_of_Quebec.svg.png'
-    }
-  ]
+definePageMeta({
+  layout: 'watch'
 })
+
+
 </script>
 
 <style>
