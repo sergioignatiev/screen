@@ -20,10 +20,19 @@ useHead({
 useSeoMeta({
   description:
     'Watch French TV shows with subtitles online. Discover series with accurate subtitles and improve your French through immersive viewing.',
-  ogImage: '/logo.jpg',
+  ogImage: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=600',
   ogType: 'website',
   twitterCard: 'summary_large_image',
-  twitterImage: '/logo.jpg'
+  twitterImage: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=600'
+})
+useHead({
+   link: [
+    {
+      key:'favicon',
+      rel: 'icon',
+      href: '/logo.jpg'
+    }
+  ]
 })
 </script>
 

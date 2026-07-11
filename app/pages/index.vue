@@ -1,29 +1,28 @@
 <template>
   <main class="mx-auto max-w-6xl px-6 py-10 text-white">
-    <section class="mb-10">
+    <section class="mb-12">
       <h1 class="mb-4 text-4xl font-bold">
         Watch French Movies and TV Shows with Subtitles
       </h1>
 
-      <p class="max-w-3xl text-zinc-300">
+      <p class="max-w-3xl text-zinc-300 leading-relaxed">
         Discover French movies and TV shows with subtitles. Watch French
         content online and improve your listening skills with accurate
-        subtitles and immersive viewing.
+        subtitles, natural conversations and immersive viewing.
       </p>
     </section>
 
-    <section class="mb-12">
-      <div class="aspect-video overflow-hidden rounded-xl bg-zinc-900">
-        <iframe
-          src="https://player.cloudinary.com/embed/?cloud_name=slcihrr9&public_id=samples%2Felephants"
-          title="French movie and TV show video player"
-          class="h-full w-full"
-          loading="lazy"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-          allowfullscreen
-          frameborder="0"
-        />
-      </div>
+    <section class="mb-12 rounded-xl bg-zinc-900 p-8">
+      <h2 class="mb-3 text-2xl font-semibold">
+        Learn French Through Movies and Series
+      </h2>
+
+      <p class="max-w-4xl text-zinc-300 leading-relaxed">
+        Watching French movies and TV shows is one of the best ways to improve
+        listening comprehension, expand vocabulary and get familiar with real
+        French pronunciation. Explore content with subtitles and learn French
+        naturally while enjoying stories.
+      </p>
     </section>
 
     <section class="grid gap-8 md:grid-cols-3">
@@ -62,7 +61,6 @@
     </section>
   </main>
 </template>
-
 <script setup lang="ts">
 useSeoMeta({
   title: 'Watch French Movies and TV Shows with Subtitles | Screen',
@@ -82,14 +80,6 @@ useSchemaOrg([
     '@type': 'WebSite',
     name: 'Screen',
     url: 'https://yourdomain.com'
-  },
-  {
-    '@type': 'VideoObject',
-    name: 'French video with subtitles',
-    description:
-      'French movie and TV show video with subtitles.',
-    thumbnailUrl: '/logo.jpg',
-    uploadDate: '2026-01-01'
   }
 ])
 </script>
