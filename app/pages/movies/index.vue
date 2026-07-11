@@ -1,5 +1,6 @@
 <template>
   <div class="container mx-auto px-4 py-10">
+    
     <div
       class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
     >
@@ -34,4 +35,14 @@
 
 <script setup lang="ts">
 import { movies } from '~/data/movies'
+useSeoMeta({
+  title: 'French Movies with Subtitles | Screen',
+  description:
+    'Watch French movies with subtitles online. Discover films with accurate subtitles and improve your French through immersive viewing.',
+  ogTitle: 'French Movies with Subtitles | Screen',
+  ogDescription:
+    'Watch French movies with subtitles online. Discover films with accurate subtitles and improve your French through immersive viewing.',
+  ogImage: '/logo.jpg',
+  ogType: 'website'
+})
 </script>
