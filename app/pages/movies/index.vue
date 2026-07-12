@@ -14,7 +14,7 @@
           class="overflow-hidden rounded-xl bg-zinc-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
         >
           <NuxtImg
-            :src="movie.posterSrc"
+            :src="movie.poster"
             :alt="movie.title"
             loading="lazy"
             class="aspect-[2/3] w-full object-cover transition duration-500 group-hover:scale-110"

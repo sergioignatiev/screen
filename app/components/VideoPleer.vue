@@ -8,7 +8,7 @@
         class="max-h-[90vh] w-auto max-w-[95vw]"
         playsinline
         loop
-        :poster="movie.posterSrc"
+        :poster="movie.poster"
       >
         <source :src="movie.videoSrc" type="video/mp4">
         <track
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+
 
 import type { Movie } from '~/interfaces/movies'
 import 'plyr/dist/plyr.css'

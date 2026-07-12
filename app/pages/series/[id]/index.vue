@@ -1,5 +1,6 @@
 <template>
   <div v-if="serie">
+    <h1>INDEX?SERIES</h1>
     <!-- Передаем найденный сериал в компонент -->
     <VideoPosterSeries :serie="serie" />
   </div>

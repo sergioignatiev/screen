@@ -7,7 +7,7 @@
       <!-- Постер -->
       <div>
         <NuxtImg
-          :src="movie.posterSrc"
+          :src="movie.poster"
           :alt="movie.title"
           class="w-full rounded-xl shadow-xl"
         />
